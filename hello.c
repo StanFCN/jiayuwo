@@ -1,6 +1,15 @@
 #include <stdio.h>
+
+int sum(int a, int b)
+{
+
+    return (a + b);
+}
+
 int main()
 {
-    printf("hello world\r\n");
+    int c, d;
+    scanf("%d%d", &c, &d);
+    printf("%d\r\n", sum(c, d));
     return 0;
 }
