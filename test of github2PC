@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{    
+    char string[] = "12345 67890"
+    char string2[40];
+    strncpy(string2,string,5);
+    //string2[5] = '\0';
+    pringf("%s\n",str2);
+    return 0;
+}
