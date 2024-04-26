@@ -12,7 +12,7 @@ int main()
         a = 6;
         goto label;
     }
-
+//hello
     printf("a is %d\r\n", a);
     return 0;
 }
