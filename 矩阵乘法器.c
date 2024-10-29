@@ -1,12 +1,9 @@
 #include <stdio.h>
 
-
-
 int main(){
-    system("chcp 65001");
     setbuf(stdout,NULL);
     int m,p,n;
-
+    int i,j;
     printf("矩阵乘法器:\n请输入您想计算的矩阵的行列数\n");
     printf("行数为");
     scanf("%d",&m);
@@ -41,54 +38,72 @@ int main(){
         }
     }
     //输出结果
+
     int row = m > p ? m : p;
-    for (int i = 0; i < row; i++) {
+    for (i = 0; i < row; i++)
+    {
+        // 获取A
         printf("|  ");
-        for(int j = 0; j < p; j++) {
-            if(i < m) {
-                printf("\b%d ",A[i][j]);
+        for (j = 0; j < p; j++)
+        {
+            if (i < m)
+            {
+                printf("\b%d ", A[i][j]);
                 printf("|");
             }
-            else {
-                printf("\b\b\b   ");
+            else
+            {
+                printf("\b\b\b     ");
             }
         }
-
-        if (i == row/2) {
+        // 打印 * 号
+        if (i == row / 2)
+        {
             printf(" * ");
         }
-        else {
+        else
+        {
             printf("   ");
         }
-        //输
         printf("|  ");
-        for(int j = 0;j < n;j++) {
-            if(i < p) {
-                printf("\b%d ",B[i][j]);
+        // 打印B
+        for (j = 0; j < n; j++)
+        {
+            if (i < p)
+            {
+                printf("\b%d ", B[i][j]);
                 printf("|");
             }
-            else {
+            else
+            {
                 printf("\b\b\b   ");
             }
         }
-        if(i == row / 2) {
+        // 打印 = 号
+        if (i == row / 2)
+        {
             printf(" = ");
         }
-        else {
+        else
+        {
             printf("   ");
         }
-        //打印答案
+        // 打印C
         printf("|  ");
-        for(int j =0; j < n;j++) {
-            if (i < m) {
-                printf("\b%d ",R[i][j]);
+        for (j = 0; j < n; j++)
+        {
+            if (i < m)
+            {
+                printf("\b%d ", R[i][j]);
                 printf("|");
             }
-            else {
-                printf("\b\b\b   ");
+            else
+            {
+                printf("\b\b\b      ");
             }
         }
         printf("\n");
     }
+
     return  0;
 }
